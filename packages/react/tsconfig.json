@@ -1,0 +1,32 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "noEmit": false,
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "@disco3/core": [
+        "../core/src"
+      ],
+      "@disco3/core/*": [
+        "../core/src/*"
+      ],
+      "@disco3/theme": [
+        "../theme/src"
+      ]
+    }
+  },
+  "references": [
+    {
+      "path": "../theme/tsconfig.json"
+    },
+    {
+      "path": "../core/tsconfig.json"
+    }
+  ],
+  "include": [
+    "src/**/*",
+    "tests/**/*"
+  ]
+}
