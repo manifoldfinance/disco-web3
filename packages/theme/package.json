@@ -17,7 +17,8 @@
     "dist"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "directory": "dist"
   },
   "main": "dist/index.js",
   "module": "dist/index.mjs",

@@ -1,3 +1,4 @@
+import React from 'react';
 import { BoxProps } from './box';
 export interface IconButtonProps extends BoxProps {
     icon: any;
@@ -6,4 +7,4 @@ export interface IconButtonProps extends BoxProps {
     isHovered?: boolean;
     invert?: boolean;
 }
-export declare const IconButton: any;
+export declare const IconButton: React.ForwardRefExoticComponent<IconButtonProps & React.RefAttributes<HTMLElement>>;

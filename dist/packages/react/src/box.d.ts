@@ -5,5 +5,5 @@ export interface BoxProps extends CssThemeProps, HTMLProperties {
     as?: React.ElementType;
     className?: string;
 }
-export declare const Box: any;
+export declare const Box: React.ForwardRefExoticComponent<BoxProps & React.RefAttributes<HTMLElement>>;
 export {};
