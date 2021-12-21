@@ -1,0 +1,21 @@
+{
+  "name": "@disco3/theme",
+  "version": "0.1.3",
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "index.js",
+  "module": "index.mjs",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./index.js",
+      "import": "./index.mjs",
+      "types": "./index.d.ts"
+    },
+    "./*": {
+      "require": "./*.js",
+      "import": "./*.mjs",
+      "types": "./*.d.ts"
+    },
+    "./package.json": "./package.json"
+  }
+}
