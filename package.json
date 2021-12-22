@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "workspaces": [
-    "modules/*",
     "packages/*"
   ],
   "scripts": {
@@ -12,7 +11,8 @@
     "lint": "turbo run lint",
     "test": "turbo run test",
     "clean": "turbo run clean && rm -rf node_modules",
-    "format": "prettier --config .prettierrc.json --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --config .prettierrc.json --write \"**/*.{ts,tsx,md}\"",
+    "cache-remote": "npx turbo login && npx turbo link"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.8.0",
@@ -29,6 +29,7 @@
     "turbo": "latest"
   },
   "turbo": {
+    "baseBranch": "origin/master",
     "pipeline": {
       "build": {
         "dependsOn": [
@@ -38,6 +39,12 @@
           "dist/**",
           ".next/**"
         ]
+      },
+      "test": {
+        "dependsOn": [
+          "^build"
+        ],
+        "outputs": []
       },
       "lint": {
         "outputs": []
@@ -50,5 +57,8 @@
   "engines": {
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.19.0"
   }
 }
