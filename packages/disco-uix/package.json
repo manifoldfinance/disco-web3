@@ -1,11 +1,9 @@
 {
-  "name": "disco3-monorepo",
+  "name": "@disco3/design-build-system",
   "version": "0.0.0",
   "scripts": {},
-  "private": true,
   "devDependencies": {
     "@rollup/plugin-typescript": "8.2.5",
-    "ctix": "^0.3.1",
     "esbuild": "^0.13.13",
     "eslint": "7.32.0",
     "eslint-config-prettier": "8.3.0",

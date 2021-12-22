@@ -1,0 +1,13 @@
+
+.vscode-test/
+out/
+dist/
+test-fixtures/
+node_modules/
+*.min.js
+*.js
+*.json
+*.css
+*.scss
+*.html
+

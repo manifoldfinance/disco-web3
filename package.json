@@ -1,18 +1,30 @@
 {
-  "name": "turborepo-basic-shared",
+  "name": "@disco3/turbo",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
-    "apps/*",
+    "modules/*",
     "packages/*"
   ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "test": "turbo run test",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --config .prettierrc.json --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
+    "bob-esbuild": "^3.2.1",
+    "bob-esbuild-cli": "^3.0.1",
+    "bob-tsm": "^0.4.0-alpha-64ca079.0",
+    "dotenv": "^10.0.0",
+    "esbuild": "^0.14.7",
+    "eslint": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "lerna": "^4.0.0",
     "prettier": "^2.5.1",
     "turbo": "latest"
   },
