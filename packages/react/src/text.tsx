@@ -1,9 +1,11 @@
 import React from 'react';
-import {colors, typeStyles} from '@disco3/theme';
-import {Box, BoxProps} from './box';
+import { colors, typeStyles } from '@disco3/theme';
+import { Box, BoxProps } from './box';
 import clsx from 'clsx';
 
-const getDefaultColor = (type: keyof typeof typeStyles): keyof typeof colors['light'] => {
+const getDefaultColor = (
+  type: keyof typeof typeStyles,
+): keyof typeof colors['light'] => {
   switch (type) {
     case 'Body01':
     case 'Body02':
@@ -26,22 +28,24 @@ const getDefaultColor = (type: keyof typeof typeStyles): keyof typeof colors['li
   }
 };
 
-export const Text = React.forwardRef<HTMLElement,
-    BoxProps & {
-  variant?: keyof typeof typeStyles;
-}>(({variant, className, css = {}, ...props}, ref) => {
+export const Text = React.forwardRef<
+  HTMLElement,
+  BoxProps & {
+    variant?: keyof typeof typeStyles;
+  }
+>(({ variant, className, css = {}, ...props }, ref) => {
   const color = variant && getDefaultColor(variant);
   const styles = variant ? typeStyles[variant] : {};
   return (
-      <Box
-          className={clsx([className])}
-          ref={ref}
-          color={color}
-          css={{
-            ...styles,
-            ...css,
-          }}
-          {...props}
-      />
+    <Box
+      className={clsx([className])}
+      ref={ref}
+      color={color}
+      css={{
+        ...styles,
+        ...css,
+      }}
+      {...props}
+    />
   );
 });

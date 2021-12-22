@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "./dist",
+    "tsBuildInfoFile": "./tsconfig.tsbuildinfo",
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@wwwr/theme": [
+        "../theme/src"
+      ]
+    }
+  },
+  "references": [
+    {
+      "path": "../theme/tsconfig.json"
+    }
+  ],
+  "include": ["src/**/*"]
+}
+
