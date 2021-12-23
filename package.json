@@ -5,7 +5,7 @@
   "license": "SEE LICENSE IN LICENSE",
   "workspaces": [
     "packages/*",
-    "safeweb3/*"
+    "w3r/*"
   ],
   "scripts": {
     "build": "turbo run build",
