@@ -41,5 +41,5 @@ jobs:
       - run: yarn install
         id: install
 
-      - run: turbo run build
+      - run: npx turbo run build
         id: turbo

@@ -106,3 +106,11 @@ export const useWallet: UseWallet = () => {
     web3Modal,
   };
 };
+
+
+// Injects useWallet meta into devtools.
+useWallet.injectIntoDevTools({
+  bundleType: process.env.NODE_ENV === 'production' ? 0 : 1,
+  rendererPackageName: 'useWallet',
+  version: '0.2.0',
+});
