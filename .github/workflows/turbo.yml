@@ -43,3 +43,22 @@ jobs:
 
       - run: turbo run build
         id: turbo
+
+  tagged-release:
+    name: "Tagged Release"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      # ...
+      - name: "Build & test"
+        run: |
+          lerna exec npm pack
+          echo "npm pack finished"
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          files: |
+            *.tgz
+            *.jar
